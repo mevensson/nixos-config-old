@@ -16,6 +16,7 @@
       ../../modules/networking.nix
       ../../modules/printing.nix
       ../../modules/sound.nix
+      ../../modules/spotify.nix
       ../../modules/steam.nix
 
       ../../users/matte.nix
