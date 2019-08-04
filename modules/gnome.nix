@@ -6,10 +6,18 @@
      firefox
   ];
 
+  nixpkgs.config.firefox.enableGnomeExtensions = true;
+
   services = {
     # Gnome Terminal Service
-    gnome3.gnome-terminal-server = {
-      enable = true;
+    gnome3 = {
+      gnome-terminal-server = {
+        enable = true;
+      };
+
+      chrome-gnome-shell = {
+        enable = true;
+      };
     };
 
     # Enable the X11 windowing system.
@@ -25,6 +33,7 @@
       # Enable the GNOME Desktop Environment.
       displayManager.gdm = {
         enable = true;
+        wayland = false;
       };
       desktopManager.gnome3 = {
         enable = true;
