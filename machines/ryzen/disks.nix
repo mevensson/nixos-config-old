@@ -24,6 +24,12 @@
       options = [ "subvol=@misc" ];
     };
 
+  fileSystems."/media/steam" =
+    { device = "/dev/disk/by-uuid/54b58a38-6b0b-4c8e-a35d-44e3e8a052ac";
+      fsType = "btrfs";
+      options = [ "subvol=@steam" ];
+    };
+
   fileSystems."/media/btrfs-root" =
     { device = "/dev/disk/by-uuid/54b58a38-6b0b-4c8e-a35d-44e3e8a052ac";
       fsType = "btrfs";
