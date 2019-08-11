@@ -14,10 +14,6 @@
       gnome-terminal-server = {
         enable = true;
       };
-
-      chrome-gnome-shell = {
-        enable = true;
-      };
     };
 
     # Enable the X11 windowing system.
