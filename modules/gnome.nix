@@ -6,7 +6,7 @@
      firefox
   ];
 
-  nixpkgs.config.firefox.enableGnomeExtensions = true;
+  fonts.fonts = [ pkgs.corefonts ];
 
   services = {
     # Gnome Terminal Service
