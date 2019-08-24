@@ -1,9 +1,14 @@
 { config, pkgs, ... }:
+
+let
+  random-wallpaper = pkgs.callPackage ../packages/random-wallpaper {};
+in
 {
   environment.systemPackages = with pkgs; [
      gnome3.gnome-tweaks
      gnomeExtensions.dash-to-dock
      firefox
+     random-wallpaper
   ];
 
   fonts.fonts = [ pkgs.corefonts ];
@@ -30,6 +35,7 @@
       displayManager.gdm = {
         enable = true;
         wayland = false;
+        debug = true;
       };
       desktopManager.gnome3 = {
         enable = true;
