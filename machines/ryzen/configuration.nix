@@ -12,6 +12,7 @@
       ../../modules/auto-upgrade.nix
       ../../modules/development.nix
       ../../modules/gnome.nix
+      ../../modules/libreoffice.nix
       ../../modules/locales.nix
       ../../modules/networking.nix
       ../../modules/printing.nix
