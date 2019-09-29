@@ -14,13 +14,6 @@ in
   fonts.fonts = [ pkgs.corefonts ];
 
   services = {
-    # Gnome Terminal Service
-    gnome3 = {
-      gnome-terminal-server = {
-        enable = true;
-      };
-    };
-
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
@@ -34,7 +27,7 @@ in
       # Enable the GNOME Desktop Environment.
       displayManager.gdm = {
         enable = true;
-        wayland = false;
+        wayland = true;
         debug = true;
       };
       desktopManager.gnome3 = {
