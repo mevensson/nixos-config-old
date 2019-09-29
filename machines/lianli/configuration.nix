@@ -9,11 +9,12 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
+      ../../modules/boot-grub.nix
+
       ../../modules/auto-upgrade.nix
       ../../modules/disable-gdm-auto-suspend.nix
       ../../modules/firewall.nix
       ../../modules/gnome.nix
-      ../../modules/grub.nix
       ../../modules/httpd.nix
       ../../modules/locales.nix
       ../../modules/networking.nix
@@ -28,7 +29,6 @@
       ../../users/matte.nix
     ];
 
-  # Use the GRUB 2 boot loader.
   boot = {
     loader = {
       grub = {

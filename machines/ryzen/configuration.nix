@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
+      ../../modules/boot-systemd.nix
+
       ../../modules/auto-upgrade.nix
       ../../modules/development.nix
       ../../modules/gnome.nix
@@ -23,10 +25,6 @@
       ../../users/matte.nix
       ../../users/test.nix
     ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = false;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

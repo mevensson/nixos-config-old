@@ -10,6 +10,7 @@
         # efiSupport = true;
         # efiInstallAsRemovable = true;
         # efiSysMountPoint = "/boot/efi";
+        configurationLimit = 10;
       };
     };
   };
