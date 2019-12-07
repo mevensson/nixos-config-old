@@ -5,10 +5,10 @@ stdenv.mkDerivation rec {
   version = "2.4.1";
 
   src = fetchFromGitHub {
-    owner = "ifl0w";
+    owner = "mevensson";
     repo = "RandomWallpaperGnome3";
-    rev = "v${version}";
-    sha256 = "0k1l08d28rk17gmzzk66948yh81d0qwnnx5vaxm0qxy7rwa90xf4";
+    rev = "f75e82cacb016770df6b37dacbddf46fb4b34bfc";
+    sha256 = "0mk7nqri3wb8jj9pqjn79pzw2b3x487a59hsrdz52bp73c8m5qd9";
   };
 
   uuid = "randomwallpaper@iflow.space";
