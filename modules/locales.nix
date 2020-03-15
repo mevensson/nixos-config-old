@@ -1,10 +1,14 @@
 { config, pkgs, ... }:
 
 {
+  # Confiure console
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "sv-latin1";
+  };
+
   # Select internationalisation properties.
   i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "sv-latin1";
     defaultLocale = "en_US.UTF-8";
   };
 
