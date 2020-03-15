@@ -6,7 +6,9 @@ in
 {
   environment.systemPackages = with pkgs; [
      gnome3.gnome-tweaks
+     gnomeExtensions.caffeine
      gnomeExtensions.dash-to-dock
+     gnomeExtensions.system-monitor
      firefox
      random-wallpaper
   ];
