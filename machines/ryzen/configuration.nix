@@ -13,6 +13,7 @@
 
       ../../modules/auto-upgrade.nix
       ../../modules/development.nix
+      ../../modules/disable-gdm-auto-suspend.nix
       ../../modules/discord.nix
       ../../modules/gnome.nix
       ../../modules/libreoffice.nix
