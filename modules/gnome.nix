@@ -1,16 +1,21 @@
 { config, pkgs, ... }:
 
-let
-  random-wallpaper = pkgs.callPackage ../packages/random-wallpaper {};
-in
 {
   environment.systemPackages = with pkgs; [
+     gnome3.dconf-editor
      gnome3.gnome-tweaks
+     gnome3.sushi
+     gnomeExtensions.appindicator
+     gnomeExtensions.arc-menu
      gnomeExtensions.caffeine
      gnomeExtensions.dash-to-dock
-     gnomeExtensions.system-monitor
+     gnomeExtensions.gsconnect
+     gnomeExtensions.impatience
+     gnomeExtensions.mpris-indicator-button
+     #gnomeExtensions.no-title-bar
+     #gnomeExtensions.system-monitor
      firefox
-     random-wallpaper
+     variety
   ];
 
   fonts.fonts = [ pkgs.corefonts ];
@@ -30,10 +35,14 @@ in
       displayManager.gdm = {
         enable = true;
         wayland = true;
-        debug = true;
+        debug = false;
       };
       desktopManager.gnome3 = {
         enable = true;
+        extraGSettingsOverrides = ''
+          [org.gnome.mutter]
+            experimental-features=['scale-monitor-framebuffer']
+        '';
       };
     };
   };
