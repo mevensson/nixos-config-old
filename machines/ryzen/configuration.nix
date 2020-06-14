@@ -13,6 +13,7 @@
 
       ../../modules/auto-upgrade.nix
       ../../modules/development.nix
+      ../../modules/discord.nix
       ../../modules/gnome.nix
       ../../modules/libreoffice.nix
       ../../modules/locales.nix
