@@ -9,50 +9,38 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ../../modules/boot-grub.nix
+      ../../modules/boot-systemd.nix
 
       ../../modules/auto-upgrade.nix
+      ../../modules/development.nix
       ../../modules/disable-gdm-auto-suspend.nix
-      ../../modules/firewall.nix
+      ../../modules/discord.nix
       ../../modules/gnome.nix
-      ../../modules/httpd.nix
+      ../../modules/libreoffice.nix
       ../../modules/locales.nix
       ../../modules/networking.nix
-      ../../modules/plex.nix
       ../../modules/printing.nix
-      ../../modules/samba.nix
       ../../modules/sound.nix
-      ../../modules/ssh-server.nix
-      ../../modules/transmission.nix
+      ../../modules/spotify.nix
+      ../../modules/steam.nix
 
-      ../../users/elin.nix
       ../../users/matte.nix
+      ../../users/test.nix
     ];
 
-  boot = {
-    loader = {
-      grub = {
-        # Define on which hard drive you want to install Grub.
-        device = "/dev/sda"; # or "nodev" for efi only
-      };
-    };
-  };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  networking.hostName = "ryzen"; # Define your hostname.
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     git
+    gnome-mpv
   ];
-
-  networking = {
-    hostName = "lianli"; # Define your hostname.
-  };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system = {
-    stateVersion = "18.09"; # Did you read the comment?
-  };
+  system.stateVersion = "19.09"; # Did you read the comment?
 }
