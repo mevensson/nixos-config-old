@@ -9,13 +9,12 @@
 
   services = {
     httpd = {
-      virtualHosts = [
-        {
+      virtualHosts = {
+        "bt.evensson.eu" = {
           hostName = "bt.evensson.eu";
           adminAddr = "mattias@evensson.eu";
           extraConfig = 
             ''
-
               ProxyPass         /  http://localhost:9091/
               ProxyPassReverse  /  http://localhost:9091/
               ProxyRequests     Off
@@ -26,8 +25,8 @@
               </Proxy>
 
             '';
-        }
-      ];
+        };
+      };
     };
 
     transmission = {
