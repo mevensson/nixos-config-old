@@ -4,7 +4,7 @@
   imports =
     [
       # Copy the password line to this file
-      ../../../transmission-password.nix
+      /etc/nixos/transmission-password.nix
     ];
 
   services = {
