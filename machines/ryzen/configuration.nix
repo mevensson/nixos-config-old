@@ -21,6 +21,7 @@
       ../../modules/ltunify.nix
       ../../modules/networking.nix
       ../../modules/printing.nix
+      ../../modules/solaar.nix
       ../../modules/sound.nix
       ../../modules/spotify.nix
       ../../modules/steam.nix
