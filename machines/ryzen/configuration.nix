@@ -18,6 +18,7 @@
       ../../modules/gnome.nix
       ../../modules/libreoffice.nix
       ../../modules/locales.nix
+      ../../modules/ltunify.nix
       ../../modules/networking.nix
       ../../modules/printing.nix
       ../../modules/sound.nix
