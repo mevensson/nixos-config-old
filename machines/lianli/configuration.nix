@@ -9,9 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ../../modules/boot-grub.nix
+      ../../modules/boot-systemd.nix
 
       ../../modules/auto-upgrade.nix
+      ../../modules/avahi.nix
       ../../modules/disable-gdm-auto-suspend.nix
       ../../modules/firewall.nix
       ../../modules/gnome.nix
@@ -29,19 +30,11 @@
       ../../users/matte.nix
     ];
 
-  boot = {
-    loader = {
-      grub = {
-        # Define on which hard drive you want to install Grub.
-        device = "/dev/sda"; # or "nodev" for efi only
-      };
-    };
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      git
+     pciutils
   ];
 
   networking = {

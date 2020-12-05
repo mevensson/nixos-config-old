@@ -8,8 +8,8 @@
     [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "pata_jmicron" "sata_sil" "usbhid" "sd_mod" "sr_mod" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -17,26 +17,31 @@
       fsType = "btrfs";
     };
 
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/A1FD-E989";
+      fsType = "vfat";
+    };
+
   fileSystems."/media/btrfs-data" =
-    { device = "/dev/sdc";
+    { device = "/dev/disk/by-uuid/8b1736a0-5b11-4b0a-819a-4b76e325cc7b";
       fsType = "btrfs";
     };
 
   fileSystems."/media/movies" =
-    { device = "/dev/sdc";
+    { device = "/dev/disk/by-uuid/8b1736a0-5b11-4b0a-819a-4b76e325cc7b";
       fsType = "btrfs";
       options = [ "subvol=@movies" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/sdc";
+    { device = "/dev/disk/by-uuid/8b1736a0-5b11-4b0a-819a-4b76e325cc7b";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/55a1f780-8ba7-4dcd-a45e-f6537d80f94a"; }
+    [ { device = "/dev/disk/by-uuid/04abcec5-13da-4740-9113-9a4eaa71b0ac"; }
     ];
 
-  nix.maxJobs = lib.mkDefault 4;
+  nix.maxJobs = lib.mkDefault 16;
 }

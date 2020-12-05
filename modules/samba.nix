@@ -8,6 +8,7 @@
   services = {
     samba = {
       enable = true;
+      enableNmbd = true;
       shares = {
         movies = {
           browseable = "yes";
@@ -15,6 +16,9 @@
           path = "/media/movies";
         }; 
       };
+      extraConfig = ''
+        workgroup = EVENSSON
+      '';
     };
   };
 }
