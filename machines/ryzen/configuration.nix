@@ -16,6 +16,7 @@
       ../../modules/disable-gdm-auto-suspend.nix
       ../../modules/discord.nix
       ../../modules/gnome.nix
+      ../../modules/home-manager.nix
       ../../modules/libreoffice.nix
       ../../modules/locales.nix
       ../../modules/ltunify.nix
@@ -27,6 +28,7 @@
       ../../modules/steam.nix
 
       ../../users/matte.nix
+      ../../users/matte-home-manager.nix
       ../../users/test.nix
     ];
 
