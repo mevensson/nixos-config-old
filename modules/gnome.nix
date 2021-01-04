@@ -1,6 +1,19 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (self: super: {
+      accountsservice = super.accountsservice.overrideAttrs (oldAttrs: {
+        buildInputs = oldAttrs.buildInputs ++ [ self.systemd ];
+        mesonFlags = [
+          "-Dadmin_group=wheel"
+          "-Dlocalstatedir=/var"
+          "-Dsystemdsystemunitdir=${placeholder "out"}/etc/systemd/system"
+          "-Dsystemd=true"
+        ];
+      });
+    })
+  ];
   environment.systemPackages = with pkgs; [
      gnome3.dconf-editor
      gnome3.gnome-tweaks
@@ -17,6 +30,10 @@
      firefox
      variety
   ];
+
+  #environment.variables = {
+  #  G_MESSAGES_DEBUG = "all";
+  #};
 
   fonts.fonts = [ pkgs.corefonts ];
 
@@ -39,10 +56,11 @@
       };
       desktopManager.gnome3 = {
         enable = true;
-        extraGSettingsOverrides = ''
-          [org.gnome.mutter]
-            experimental-features=['scale-monitor-framebuffer']
-        '';
+        debug = false;
+        #extraGSettingsOverrides = ''
+        #  [org.gnome.mutter]
+        #    experimental-features=['scale-monitor-framebuffer']
+        #'';
       };
     };
   };
