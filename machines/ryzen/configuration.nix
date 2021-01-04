@@ -26,6 +26,7 @@
       ../../modules/sound.nix
       ../../modules/spotify.nix
       ../../modules/steam.nix
+      ../../modules/viber.nix
 
       ../../users/matte.nix
       ../../users/matte-home-manager.nix
