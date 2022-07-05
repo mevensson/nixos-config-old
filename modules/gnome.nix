@@ -1,25 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [
-    (self: super: {
-      accountsservice = super.accountsservice.overrideAttrs (oldAttrs: {
-        buildInputs = oldAttrs.buildInputs ++ [ self.systemd ];
-        mesonFlags = [
-          "-Dadmin_group=wheel"
-          "-Dlocalstatedir=/var"
-          "-Dsystemdsystemunitdir=${placeholder "out"}/etc/systemd/system"
-          "-Dsystemd=true"
-        ];
-      });
-    })
-  ];
   environment.systemPackages = with pkgs; [
      gnome3.dconf-editor
      gnome3.gnome-tweaks
      gnome3.sushi
      gnomeExtensions.appindicator
-     gnomeExtensions.arc-menu
+     #gnomeExtensions.arc-menu
      gnomeExtensions.caffeine
      gnomeExtensions.dash-to-dock
      gnomeExtensions.gsconnect
@@ -28,7 +15,7 @@
      #gnomeExtensions.no-title-bar
      #gnomeExtensions.system-monitor
      firefox
-     variety
+     #variety
   ];
 
   #environment.variables = {
@@ -54,7 +41,7 @@
         wayland = true;
         debug = false;
       };
-      desktopManager.gnome3 = {
+      desktopManager.gnome = {
         enable = true;
         debug = false;
         #extraGSettingsOverrides = ''
