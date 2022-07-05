@@ -3,8 +3,10 @@
 {
   imports =
     [
-      # Copy the password line to this file
+      # Copy the rpc-password to this file
       /etc/nixos/transmission-password.nix
+
+      ../users/media-group.nix
     ];
 
   services = {
@@ -31,6 +33,7 @@
 
     transmission = {
       enable = true;
+      group = "media";
       settings = {
         download-dir = "/media/movies/incoming/";
         incomplete-dir-enabled = false;

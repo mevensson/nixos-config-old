@@ -30,6 +30,8 @@
       ../../users/matte.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
