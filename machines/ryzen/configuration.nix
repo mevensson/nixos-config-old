@@ -25,6 +25,7 @@
       ../../modules/solaar.nix
       ../../modules/sound.nix
       ../../modules/spotify.nix
+      ../../modules/ssh-server.nix
       ../../modules/steam.nix
       ../../modules/viber.nix
 
