@@ -40,6 +40,10 @@
         rpc-username = "bt";
         #rpc-password = "write-password-here";
         rpc-authentication-required = true;
+        speed-limit-down-enabled = true;
+        speed-limit-down = 7000;
+        speed-limit-up-enabled = true;
+        speed-limit-up = 7000;
       };
     };
   };
