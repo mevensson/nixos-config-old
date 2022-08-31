@@ -1,6 +1,15 @@
 { config, pkgs, ... }:
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
 {
+  imports = [
+    (import "${home-manager}/nixos")
+  ];
+
   home-manager.users.matte = { pkgs, ... }: {
+    home.stateVersion = "22.05";
+
     programs.bash = {
       enable = true;
       historyControl = [ "erasedups" "ignoredups" "ignorespace" ];

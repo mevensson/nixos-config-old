@@ -13,7 +13,6 @@
 
       ../../modules/auto-upgrade.nix
       ../../modules/gnome.nix
-      ../../modules/home-manager.nix
       ../../modules/locales.nix
       ../../modules/networking.nix
       ../../modules/printing.nix
