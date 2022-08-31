@@ -7,5 +7,10 @@
       enable = true;
       drivers = [ pkgs.hplip ];
     };
+
+    avahi = {
+      enable = true;
+      nssmdns = true;
+    };
   };
 }
