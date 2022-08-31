@@ -12,6 +12,7 @@
      gnomeExtensions.gsconnect
      gnomeExtensions.impatience
      gnomeExtensions.mpris-indicator-button
+     gnomeExtensions.pop-shell
      #gnomeExtensions.no-title-bar
      #gnomeExtensions.system-monitor
      firefox
